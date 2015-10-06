@@ -1,0 +1,1 @@
+GRANT SELECT, INSERT, UPDATE ON holder TO limited;
