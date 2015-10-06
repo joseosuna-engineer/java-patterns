@@ -1,11 +1,11 @@
 <subsystem xmlns="urn:jboss:domain:datasources:1.1">
    <datasources>
       <datasource jta="true" jndi-name="java:jboss/datasources/jbpmDS" pool-name="java:jboss/datasources/jbpmDS_Pool" enabled="true" use-java-context="true" use-ccm="true">
-         <connection-url>jdbc:postgresql:mem:test;DB_CLOSE_DELAY=-1</connection-url>
+         <connection-url>jdbc:postgresql://host:port/database</connection-url>
          <driver-class>org.postgresql.Driver</driver-class>
          <driver>postgresql-jdbc4</driver>
          <pool>
-            <min-pool-size>2</min-pool-size>
+            <min-pool-size>1</min-pool-size>
             <max-pool-size>20</max-pool-size>
             <prefill>true</prefill>
          </pool>
@@ -21,7 +21,9 @@
          </validation>
       </datasource>
       <drivers>
-         <driver name="postgresql-jdbc4" module="org.postgresql"/>
+         <driver name="postgresql-jdbc4" module="org.postgresql.version" >
+				<xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class> 
+			</driver>
       </drivers>
    </datasources>
 </subsystem>
