@@ -11,3 +11,11 @@ git config --global user.email johndoe@example.com
 
 /* clone */
 git clone user@server:path/to/repo.git destination/path
+
+/* remove a dir */
+git rm -r path
+git commit -am "message"
+
+/* push */
+git config --global push.default simple
+git push
