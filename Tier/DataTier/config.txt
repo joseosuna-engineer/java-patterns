@@ -1,0 +1,7 @@
+- build the ejb module
+- start the server
+- deploy the ejb
+- On client: 
+  - properties > Libraries > Add Project > Add ejb project
+                           > Add JAR/Folder > Add jboss-client.jar from bin/client
+- Run Client from IDE.
