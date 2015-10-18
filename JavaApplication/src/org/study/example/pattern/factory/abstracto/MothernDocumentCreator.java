@@ -1,6 +1,6 @@
 package org.study.example.pattern.factory.abstracto;
 
-public class MothernDocumentCreator implements DocumentCreator {
+public class MothernDocumentCreator implements IDocumentCreator {
 
     @Override
     public Letter createLetter() {

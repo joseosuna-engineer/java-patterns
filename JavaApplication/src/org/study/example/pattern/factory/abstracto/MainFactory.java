@@ -8,7 +8,9 @@ public class MainFactory {
     public static void main(String[] args) {
         try {
             DocumentType userChoise = DocumentType.MOTHERN;
-            new Document(DocumentFactory.getDocumentCreator(userChoise));
+            IDocumentCreator factory = DocumentCreator.getDocumentCreator(userChoise);
+            Resume resume = factory.createResume();
+            resume.save();
         } catch (Exception ex) {
             Logger.getLogger(MainFactory.class.getName()).log(Level.SEVERE, null, ex);
         }

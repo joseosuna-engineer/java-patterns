@@ -2,6 +2,7 @@ package org.study.example.pattern.factory.method;
 
 public class CardValidator {
 
+    // factory method
     public static ICardValidator getCardValidator(CreditCard creditCard) throws CreditCardTypeException {
         switch (creditCard.getType()) {
             case VISA:

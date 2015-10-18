@@ -1,6 +1,6 @@
 package org.study.example.pattern.factory.abstracto;
 
-public class FancyDocumentCreator implements DocumentCreator {
+public class FancyDocumentCreator implements IDocumentCreator {
 
     @Override
     public Letter createLetter() {
