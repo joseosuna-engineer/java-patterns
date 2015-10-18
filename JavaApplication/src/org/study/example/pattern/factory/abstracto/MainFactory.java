@@ -7,10 +7,10 @@ public class MainFactory {
 
     public static void main(String[] args) {
         try {
-            DocumentType userChoise = DocumentType.MOTHERN;
-            IDocumentCreator factory = DocumentCreator.getDocumentCreator(userChoise);
-            Resume resume = factory.createResume();
-            resume.save();
+            DocumentType userChoice = DocumentType.MOTHERN;
+            IDocumentCreator factory = DocumentCreator.getDocumentCreator(userChoice);
+            Resume mothernResume = factory.createResume();
+            mothernResume.save();
         } catch (Exception ex) {
             Logger.getLogger(MainFactory.class.getName()).log(Level.SEVERE, null, ex);
         }
