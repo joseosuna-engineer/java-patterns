@@ -19,3 +19,6 @@ git commit -am "message"
 /* push */
 git config --global push.default simple
 git push
+
+/* Remove last commit */
+$ git reset --hard HEAD~1
