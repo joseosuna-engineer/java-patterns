@@ -4,9 +4,5 @@
 
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
 ">
-
-    <bean id="world" class="org.example.spring.bean.World">
-        <property name="greeting" value="Hello World!"></property>
-    </bean>
     
 </beans>

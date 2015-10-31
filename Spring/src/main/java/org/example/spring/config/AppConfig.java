@@ -1,7 +1,3 @@
-package org.example.spring.bean;
-
-import org.springframework.beans.factory.annotation.Value;
-
 /*
  * Copyright 2015 Jose Osuna.
  *
@@ -17,21 +13,22 @@ import org.springframework.beans.factory.annotation.Value;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.example.spring.config;
+
+import org.example.spring.bean.World;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
 /**
  *
  * @author Jose Osuna
  */
-public class World {
+@Configuration
+public class AppConfig {
 
-    @Value("Hello World!")
-    private String greeting;
-
-    public String getGreeting() {
-        return greeting;
-    }
-
-    public void setGreeting(String greeting) {
-        this.greeting = greeting;
+    @Bean
+    public World world() {
+        return new World();
     }
 
 }
