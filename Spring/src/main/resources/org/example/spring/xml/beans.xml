@@ -4,8 +4,7 @@
 
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
 ">
-    <bean id="person" class="org.example.spring.bean.Person">
-        <property name="country" ref="country"></property>
+    <bean id="person" class="org.example.spring.bean.Person" autowire="byName">
         <property name="id" value="1"></property>
         <property name="name" value="Jose"></property>
         <property name="nickname" value="Osuna"></property>
@@ -13,25 +12,10 @@
      
     <bean id="country" class="org.example.spring.bean.Country">
         <property name="name" value="United States"></property>
-        <property name="cities">
-            <list>
-                <ref bean="city01" />
-                <ref bean="city02" />
-                <ref bean="city03" />
-            </list>
-        </property>
     </bean>
     
-    <bean id="city01" class="org.example.spring.bean.City">
+    <bean id="city" class="org.example.spring.bean.City">
         <property name="name" value="Miami"></property>
-    </bean>
-    
-    <bean id="city02" class="org.example.spring.bean.City">
-        <property name="name" value="San Francisco"></property>
-    </bean>
-    
-    <bean id="city03" class="org.example.spring.bean.City">
-        <property name="name" value="New York"></property>
     </bean>
     
 </beans>

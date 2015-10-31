@@ -25,6 +25,7 @@ public class Person {
     private String name;
     private String nickname;
     private Country country;
+    private City city;
 
     public long getId() {
         return id;
@@ -56,6 +57,14 @@ public class Person {
 
     public void setCountry(Country country) {
         this.country = country;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
     }
 
 }
