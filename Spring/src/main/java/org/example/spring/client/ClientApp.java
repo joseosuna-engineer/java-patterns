@@ -15,6 +15,8 @@
  */
 package org.example.spring.client;
 
+import java.util.List;
+import org.example.spring.bean.City;
 import org.example.spring.bean.Person;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -31,8 +33,13 @@ public class ClientApp {
                 = new ClassPathXmlApplicationContext("org/example/spring/xml/beans.xml");
         Person person = context.getBean(Person.class);
         System.out.println(person.getId() + " " + person.getName() + " "
-                + person.getNickname() + " " + person.getCountry().getName()
-                + " " + person.getCountry().getCity().getName());
+                + person.getNickname() + " " + person.getCountry().getName());
+
+        List<City> cities = person.getCountry().getCities();
+
+        for (City city : cities) {
+            System.out.println(city.getName());
+        }
 
         ((ConfigurableApplicationContext) context).close();
     }

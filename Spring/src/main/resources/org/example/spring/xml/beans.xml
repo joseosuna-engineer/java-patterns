@@ -13,11 +13,25 @@
      
     <bean id="country" class="org.example.spring.bean.Country">
         <property name="name" value="United States"></property>
-        <property name="city" ref="city"></property>
+        <property name="cities">
+            <list>
+                <ref bean="city01" />
+                <ref bean="city02" />
+                <ref bean="city03" />
+            </list>
+        </property>
     </bean>
     
-    <bean id="city" class="org.example.spring.bean.City">
+    <bean id="city01" class="org.example.spring.bean.City">
         <property name="name" value="Miami"></property>
+    </bean>
+    
+    <bean id="city02" class="org.example.spring.bean.City">
+        <property name="name" value="San Francisco"></property>
+    </bean>
+    
+    <bean id="city03" class="org.example.spring.bean.City">
+        <property name="name" value="New York"></property>
     </bean>
     
 </beans>

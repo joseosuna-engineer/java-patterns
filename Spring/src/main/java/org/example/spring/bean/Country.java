@@ -15,6 +15,8 @@
  */
 package org.example.spring.bean;
 
+import java.util.List;
+
 /**
  *
  * @author Jose Osuna
@@ -22,7 +24,7 @@ package org.example.spring.bean;
 public class Country {
 
     private String name;
-    private City city;
+    private List<City> cities;
 
     public String getName() {
         return name;
@@ -32,12 +34,12 @@ public class Country {
         this.name = name;
     }
 
-    public City getCity() {
-        return city;
+    public List<City> getCities() {
+        return cities;
     }
 
-    public void setCity(City city) {
-        this.city = city;
+    public void setCities(List<City> cities) {
+        this.cities = cities;
     }
 
 }
