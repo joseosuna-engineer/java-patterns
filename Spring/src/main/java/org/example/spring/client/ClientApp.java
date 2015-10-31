@@ -15,11 +15,10 @@
  */
 package org.example.spring.client;
 
-import org.example.spring.bean.World;
-import org.example.spring.config.AppConfig;
+import org.example.spring.bean.Person;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
@@ -28,9 +27,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class ClientApp {
 
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        World world = context.getBean(World.class);
-        System.out.println(world.getGreeting());
+        ApplicationContext context = new ClassPathXmlApplicationContext("org/example/spring/xml/beans.xml");
+        Person person = context.getBean(Person.class);
+        System.out.println(person.getId() + " " + person.getName() + " " + person.getNickname());
 
         ((ConfigurableApplicationContext) context).close();
     }
