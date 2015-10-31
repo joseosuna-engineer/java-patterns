@@ -19,20 +19,9 @@ package org.example.spring.bean;
  *
  * @author Jose Osuna
  */
-public class Person {
+public class City {
 
-    private long id;
     private String name;
-    private String nickname;
-    private Country country;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -40,22 +29,6 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public void setCountry(Country country) {
-        this.country = country;
     }
 
 }

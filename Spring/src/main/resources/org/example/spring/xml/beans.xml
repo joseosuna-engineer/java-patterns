@@ -5,8 +5,19 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
 ">
     <bean id="person" class="org.example.spring.bean.Person">
-        <constructor-arg index="0" type="long" value="1"></constructor-arg>
-        <constructor-arg index="1" type="String" value="Jose"></constructor-arg>
-        <constructor-arg index="2" type="String" value="Osuna"></constructor-arg>
+        <property name="country" ref="country"></property>
+        <property name="id" value="1"></property>
+        <property name="name" value="Jose"></property>
+        <property name="nickname" value="Osuna"></property>
     </bean>
+     
+    <bean id="country" class="org.example.spring.bean.Country">
+        <property name="name" value="United States"></property>
+        <property name="city" ref="city"></property>
+    </bean>
+    
+    <bean id="city" class="org.example.spring.bean.City">
+        <property name="name" value="Miami"></property>
+    </bean>
+    
 </beans>

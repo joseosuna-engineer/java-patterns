@@ -27,9 +27,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class ClientApp {
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("org/example/spring/xml/beans.xml");
+        ApplicationContext context
+                = new ClassPathXmlApplicationContext("org/example/spring/xml/beans.xml");
         Person person = context.getBean(Person.class);
-        System.out.println(person.getId() + " " + person.getName() + " " + person.getNickname());
+        System.out.println(person.getId() + " " + person.getName() + " "
+                + person.getNickname() + " " + person.getCountry().getName()
+                + " " + person.getCountry().getCity().getName());
 
         ((ConfigurableApplicationContext) context).close();
     }

@@ -19,20 +19,10 @@ package org.example.spring.bean;
  *
  * @author Jose Osuna
  */
-public class Person {
+public class Country {
 
-    private long id;
     private String name;
-    private String nickname;
-    private Country country;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
+    private City city;
 
     public String getName() {
         return name;
@@ -42,20 +32,12 @@ public class Person {
         this.name = name;
     }
 
-    public String getNickname() {
-        return nickname;
+    public City getCity() {
+        return city;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public void setCountry(Country country) {
-        this.country = country;
+    public void setCity(City city) {
+        this.city = city;
     }
 
 }
