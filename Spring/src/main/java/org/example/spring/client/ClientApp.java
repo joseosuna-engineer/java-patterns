@@ -30,9 +30,14 @@ public class ClientApp {
         ApplicationContext context
                 = new ClassPathXmlApplicationContext("org/example/spring/xml/beans.xml");
         Person person = context.getBean(Person.class);
-        System.out.println(person.getId() + " " + person.getName() + " "
+        Person anotherPerson = context.getBean(Person.class);
+        System.out.println(person + " " +person.getId() + " " + person.getName() + " "
                 + person.getNickname() + " " + person.getCountry().getName()
                 + " " + person.getCity().getName());
+        
+        System.out.println(anotherPerson + " " +anotherPerson.getId() + " " + anotherPerson.getName() + " "
+                + anotherPerson.getNickname() + " " + anotherPerson.getCountry().getName()
+                + " " + anotherPerson.getCity().getName());
 
         ((ConfigurableApplicationContext) context).close();
     }
