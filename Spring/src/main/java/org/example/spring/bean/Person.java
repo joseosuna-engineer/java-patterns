@@ -27,6 +27,14 @@ public class Person {
     private Country country;
     private City city;
 
+    public void init() {
+        System.out.println("Al inicio del objeto.");
+    }
+
+    public void destroy() {
+        System.out.println("Justo antes del final del objeto.");
+    }
+
     public long getId() {
         return id;
     }

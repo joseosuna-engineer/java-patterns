@@ -4,7 +4,8 @@
 
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
 ">
-    <bean id="person" class="org.example.spring.bean.Person" autowire="byName" scope="prototype" >
+    <bean id="person" class="org.example.spring.bean.Person" autowire="byName" 
+        init-method="init" destroy-method="destroy" >
         <property name="id" value="1"></property>
         <property name="name" value="Jose"></property>
         <property name="nickname" value="Osuna"></property>
