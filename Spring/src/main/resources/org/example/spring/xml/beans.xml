@@ -5,20 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
                             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
 ">  
-    <context:annotation-config />
     
-    <bean id="person" class="org.example.spring.bean.Person" autowire="byType">
-        <property name="id" value="1"></property>
-        <property name="name" value="Jose"></property>
-        <property name="nickname" value="Osuna"></property>
-    </bean>
-     
-    <bean id="country" class="org.example.spring.bean.Country">
-        <property name="name" value="United States"></property>
-    </bean>
-    
-    <bean id="city" class="org.example.spring.bean.City">
-        <property name="name" value="Miami"></property>
-    </bean>
-    
+    <context:component-scan base-package="org.example.spring.bean"></context:component-scan>
+
 </beans>

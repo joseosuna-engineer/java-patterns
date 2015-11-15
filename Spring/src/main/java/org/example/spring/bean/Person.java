@@ -16,15 +16,21 @@
 package org.example.spring.bean;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Jose Osuna
  */
+@Component
 public class Person {
 
+    @Value("1")
     private long id;
+    @Value("Jose")
     private String name;
+    @Value("Osuna")
     private String nickname;
     @Autowired
     private Country country;

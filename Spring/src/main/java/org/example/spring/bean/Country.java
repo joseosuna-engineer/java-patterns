@@ -15,12 +15,17 @@
  */
 package org.example.spring.bean;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author Jose Osuna
  */
+@Component
 public class Country {
 
+    @Value("United States of America")
     private String name;
 
     public String getName() {
