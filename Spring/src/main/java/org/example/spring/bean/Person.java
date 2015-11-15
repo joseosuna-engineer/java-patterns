@@ -15,6 +15,8 @@
  */
 package org.example.spring.bean;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  *
  * @author Jose Osuna
@@ -24,16 +26,10 @@ public class Person {
     private long id;
     private String name;
     private String nickname;
+    @Autowired
     private Country country;
+    @Autowired
     private City city;
-
-    public void init() {
-        System.out.println("Al inicio del objeto.");
-    }
-
-    public void destroy() {
-        System.out.println("Justo antes del final del objeto.");
-    }
 
     public long getId() {
         return id;
