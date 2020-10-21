@@ -1,1 +1,1 @@
-util classess and methods
+Some Java training and practices.
