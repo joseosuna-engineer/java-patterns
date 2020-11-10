@@ -1,7 +1,0 @@
-Para configurar cada servidor de Jboss con un JDK especifico:
-- no agregar la variable JAVA_HOME ni JRE_HOME a las variables del sistema
-- dentro del JBOSS_HOME/bin/standalone.conf.bat set "JAVA_HOME=java-path"
-- si estás en netBeans: 
-    - Tools > Java Platforms > Add Platform ... agregar la version del JDK
-    - Services > Servers > myJBossServer > Properties > Java Platform ... seleccionar la version del JDK
-    
