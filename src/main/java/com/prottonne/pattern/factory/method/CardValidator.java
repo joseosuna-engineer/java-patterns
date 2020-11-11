@@ -1,6 +1,8 @@
 package com.prottonne.pattern.factory.method;
 
 public class CardValidator {
+    
+    private CardValidator(){}
 
     // factory method
     public static ICardValidator getCardValidator(CreditCard creditCard) throws CreditCardTypeException {

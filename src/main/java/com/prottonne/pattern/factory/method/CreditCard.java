@@ -6,6 +6,7 @@ public class CreditCard {
     private CreditCardType type;
 
     public CreditCard() {
+        super();
     }
 
     public long getId() {

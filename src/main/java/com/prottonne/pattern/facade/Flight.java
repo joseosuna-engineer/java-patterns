@@ -1,13 +1,13 @@
 package com.prottonne.pattern.facade;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Flight {
 
     private String number;
-    private Date date;
+    private LocalDateTime date;
 
-    public Flight(String number, Date date) {
+    public Flight(String number, LocalDateTime date) {
         this.number = number;
         this.date = date;
     }
@@ -20,11 +20,11 @@ public class Flight {
         this.number = number;
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
