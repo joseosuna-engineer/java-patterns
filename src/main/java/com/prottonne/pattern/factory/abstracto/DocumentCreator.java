@@ -1,15 +1,19 @@
 package com.prottonne.pattern.factory.abstracto;
 
-public class DocumentCreator {
+import com.prottonne.pattern.exception.DocumentCreatorException;
 
-    public static IDocumentCreator getDocumentCreator(DocumentType documentType) throws Exception {
+public class DocumentCreator {
+    
+    private DocumentCreator(){}
+
+    public static IDocumentCreator getDocumentCreator(DocumentType documentType)  {
         switch (documentType) {
             case FANCY:
                 return new FancyDocumentCreator();
             case MOTHERN:
                 return new MothernDocumentCreator();
             default:
-                throw new Exception();
+                throw new DocumentCreatorException("it is not Fancy or mothern");
         }
     }
 

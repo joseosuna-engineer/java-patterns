@@ -17,16 +17,27 @@ import com.prottonne.pattern.factory.method.CreditCardType;
 import com.prottonne.pattern.factory.method.CreditCardTypeException;
 import com.prottonne.pattern.factory.method.ICardValidator;
 import com.prottonne.pattern.singleton.Universe;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class Application implements ApplicationRunner {
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private static final String ERROR_MSG = "some error";
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
+    }
+
+    @Override
+    public void run(ApplicationArguments arg0) throws Exception {
 
         /**
          * DAO
@@ -39,28 +50,28 @@ public class Application {
 
         customer = customerDAO.save(customer);
 
-        System.out.println("Name: " + customer.getName());
-        System.out.println("Email: " + customer.getEmail());
+        logger.info("Name: {}", customer.getName());
+        logger.info("Email: {}", customer.getEmail());
 
         /**
          * FACADE
          */
-        Date from = new Date();
-        Date to = new Date();
+        LocalDateTime from = LocalDateTime.now();
+        LocalDateTime to = from.plusMonths(6);
         TravelFacade travelFacade = new TravelFacade();
         FlightsAndHotels flightsAndHotels = travelFacade.getFlightsAndHotels(from, to);
         List<Flight> flights = flightsAndHotels.getFlights();
         List<Hotel> hotels = flightsAndHotels.getHotels();
 
-        System.out.println("Flights:");
+        logger.info("Flights:");
         for (Flight flight : flights) {
-            System.out.println("Flight: " + flight.getNumber());
-            System.out.println("Date: " + flight.getDate());
+            logger.info("Flight: {}", flight.getNumber());
+            logger.info("Date: {}", flight.getDate());
         }
-        System.out.println("Hotels:");
+        logger.info("Hotels:");
         for (Hotel hotel : hotels) {
-            System.out.println("Hotel: " + hotel.getName());
-            System.out.println("Date: " + hotel.getDate());
+            logger.info("Hotel: {}", hotel.getName());
+            logger.info("Date: {}", hotel.getDate());
         }
 
         /**
@@ -72,7 +83,7 @@ public class Application {
             Resume mothernResume = factory.createResume();
             mothernResume.save();
         } catch (Exception ex) {
-            System.out.println(ex);
+            logger.error(ERROR_MSG, ex);
         }
 
         /**
@@ -83,9 +94,9 @@ public class Application {
         try {
             ICardValidator cardValidator = CardValidator.getCardValidator(creditCard);
             boolean valid = cardValidator.validate(creditCard);
-            System.out.println(valid);
+            logger.info("valid={}", valid);
         } catch (CreditCardTypeException ex) {
-            System.out.println(ex);
+            logger.error(ERROR_MSG, ex);
         }
 
         /**
@@ -97,10 +108,10 @@ public class Application {
 
             godUniverse.setGalaxyCount(3);
 
-            System.out.println("Galaxies in God Universe: " + godUniverse.getGalaxyCount());
-            System.out.println("Galaxies in Big Bang Universe: " + bigBangUniverse.getGalaxyCount());
+            logger.info("Galaxies in God Universe: {}", godUniverse.getGalaxyCount());
+            logger.info("Galaxies in Big Bang Universe: {}", bigBangUniverse.getGalaxyCount());
         } catch (Exception ex) {
-            System.out.println(ex);
+            logger.error(ERROR_MSG, ex);
         }
 
     }

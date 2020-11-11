@@ -1,13 +1,13 @@
 package com.prottonne.pattern.facade;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Hotel {
 
     private String name;
-    private Date date;
+    private LocalDateTime date;
 
-    public Hotel(String name, Date date) {
+    public Hotel(String name, LocalDateTime date) {
         this.name = name;
         this.date = date;
     }
@@ -20,12 +20,14 @@ public class Hotel {
         this.name = name;
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
+
+  
 
 }

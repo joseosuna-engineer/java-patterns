@@ -1,6 +1,6 @@
 package com.prottonne.pattern.facade;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class TravelFacade {
@@ -13,7 +13,7 @@ public class TravelFacade {
         hotelBooker = new HotelBooker();
     }
 
-    public FlightsAndHotels getFlightsAndHotels(Date from, Date to) {
+    public FlightsAndHotels getFlightsAndHotels(LocalDateTime from, LocalDateTime to) {
 
         List<Flight> flights = flightBooker.getFlightsFor(from, to);
         List<Hotel> hotels = hotelBooker.getHotelsFor(from, to);
