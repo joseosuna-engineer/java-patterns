@@ -26,8 +26,7 @@ public class HotelBooker {
         Integer thisYear = now.getYear();
         Integer nextYear = thisYear + 1;
         LocalDateTime randomDate = Utils.createRandomDate(thisYear, nextYear);
-        Hotel hotel = new Hotel("New York Marriot Marquis", randomDate);
-        return hotel;
+        return new Hotel("New York Marriot Marquis", randomDate);
     }
 
 }

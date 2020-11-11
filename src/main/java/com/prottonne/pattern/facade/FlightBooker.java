@@ -27,8 +27,7 @@ public class FlightBooker {
         Integer thisYear = now.getYear();
         Integer nextYear = thisYear + 1;
         LocalDateTime randomDate = Utils.createRandomDate(thisYear, nextYear);
-        Flight flight = new Flight("KL " + numberFlight, randomDate);
-        return flight;
+        return new Flight("KL " + numberFlight, randomDate);
     }
 
 }

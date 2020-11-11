@@ -1,6 +1,7 @@
 package com.prottonne.pattern.util;
 
 import java.time.LocalDateTime;
+import java.security.SecureRandom;
 
 /**
  *
@@ -12,7 +13,8 @@ public class Utils {
     }
 
     public static int createRandomIntBetween(int start, int end) {
-        return start + (int) Math.round(Math.random() * (end - start));
+        SecureRandom random = new SecureRandom();
+        return start + random.nextInt((end - start + 1));
     }
 
     public static LocalDateTime createRandomDate(int startYear, int endYear) {
@@ -24,7 +26,7 @@ public class Utils {
         return LocalDateTime.of(year, month, day, hour, minute);
     }
 
-    public static Boolean isBetween(LocalDateTime date, LocalDateTime from, LocalDateTime to) {
+    public static boolean isBetween(LocalDateTime date, LocalDateTime from, LocalDateTime to) {
         return date.isAfter(from) && date.isBefore(to);
     }
 

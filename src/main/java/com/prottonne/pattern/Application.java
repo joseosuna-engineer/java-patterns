@@ -30,6 +30,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application implements ApplicationRunner {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private static final String ERROR_MSG = "some error";
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -82,7 +83,7 @@ public class Application implements ApplicationRunner {
             Resume mothernResume = factory.createResume();
             mothernResume.save();
         } catch (Exception ex) {
-            logger.error("some error", ex);
+            logger.error(ERROR_MSG, ex);
         }
 
         /**
@@ -95,7 +96,7 @@ public class Application implements ApplicationRunner {
             boolean valid = cardValidator.validate(creditCard);
             logger.info("valid={}", valid);
         } catch (CreditCardTypeException ex) {
-            logger.error("some error", ex);
+            logger.error(ERROR_MSG, ex);
         }
 
         /**
@@ -110,7 +111,7 @@ public class Application implements ApplicationRunner {
             logger.info("Galaxies in God Universe: {}", godUniverse.getGalaxyCount());
             logger.info("Galaxies in Big Bang Universe: {}", bigBangUniverse.getGalaxyCount());
         } catch (Exception ex) {
-            logger.error("some error", ex);
+            logger.error(ERROR_MSG, ex);
         }
 
     }
