@@ -3,10 +3,6 @@ package com.prottonne.pattern.util;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 
-/**
- *
- * @author jose
- */
 class UtilsTest {
 
     @Test
